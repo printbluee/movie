@@ -14,7 +14,7 @@ const { Header } = Layout;
 // 메뉴가 한 개이니 배열 형태로 안함
 const items = [{
   key: 'Home',
-  label: (<a href='/'>Home</a>)
+  label: (<a href='/movie'>Home</a>)
 }];
 
 const NavBar = () => {

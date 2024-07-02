@@ -1,6 +1,7 @@
 import { Button, Divider } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import axios from "axios";
 
 import { API_KEY, API_URL, IMAGE_BASE_URL } from '../Config';
 import MainImage from '../LandingPage/Section/MainImage';
@@ -26,19 +27,13 @@ const Detail = () => {
     let endpointCrew = `${API_URL}${movieId}/credits?api_key=${API_KEY}`;
 
     // [특정 영화 정보] 영화 아이디로 정보 요청
-    fetch(endpointInfo) // 요청
-      .then(res => res.json()) // 응답 : 객체변환
-      .then(obj => {
-        setMovie(obj)
-      })
+    axios.get(endpointInfo).then(obj => setMovie(obj.data))
 
     // [출연진/제작진] 정보 요청
-    fetch(endpointCrew)
-      .then(res => res.json())
-      .then(obj => {
-        setCasts(obj.cast)
-        setCrews(obj.crew)
-      })
+    axios(endpointCrew).then(obj => {
+      setCasts(obj.data.cast)
+      setCrews(obj.data.crew)
+    })
 
   }, []);
 
