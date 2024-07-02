@@ -1,0 +1,18 @@
+Merge branch 'main' of https://github.com/printbluee/movie
+
+# Conflicts:
+#	client/build/asset-manifest.json
+#	client/build/index.html
+#	client/package.json
+#	client/public/index.html
+#	client/src/App.test.js
+#	client/src/components/App.js
+#	client/src/components/Config.js
+#	client/src/components/Footer/Footer.js
+#	client/src/components/LandingPage/LandingPage.js
+#	client/src/components/LandingPage/Section/MainImage.js
+#	client/src/components/NavBar/NavBar.js
+#	client/src/components/commons/AntCard.js
+#	client/src/index.css
+#	client/src/index.js
+#	package.json
