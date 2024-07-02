@@ -32,8 +32,8 @@ function LandingPage() {
   return (
     <>
       <div>
-        <Link to='/items'>items 이동</Link> &nbsp;&nbsp;
-        <a href='/items'>[a 태그] Items 로 이동</a>
+        {/* <Link to='/items'>items 이동</Link> &nbsp;&nbsp;
+        <a href='/items'>[a 태그] Items 로 이동</a> */}
       </div>
       <div style={{ width: '100%' }}>
         {/* Main Image : 웹 브라우저 꽉차게 */}
@@ -76,7 +76,6 @@ function LandingPage() {
         <div style={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
           <Button onClick={loadMoreItems}>더보기</Button>
         </div>
-
       </div>
     </>
   )
