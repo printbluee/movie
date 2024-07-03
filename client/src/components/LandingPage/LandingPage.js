@@ -1,7 +1,7 @@
 import { Button, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import axios from "axios";
 import { API_KEY, API_URL, IMAGE_BASE_URL } from '../Config';
 import AntCard from '../commons/AntCard';
 import MainImage from './Section/MainImage';
@@ -83,13 +83,11 @@ function LandingPage() {
   function fetchMovies(page) {
     const endpoint = `${API_URL}popular?api_key=${API_KEY}&language=en-US&page=${page}`;
 
-    fetch(endpoint) // 요청
-      .then(res => res.json()) // 응답 : 객체변환
+    axios(endpoint) // 요청
       .then(res => {
-        // console.log(res.results);
-        setMovies([...Movies, ...res.results]); // 전개 연산자 : 배열 또는 객체를 하나하나 넘기는 용도
-        setMainMovieImage(res.results[0]);
-        setCurrentPage(res.page);
+        setMovies([...Movies, ...res.data.results]); // 전개 연산자 : 배열 또는 객체를 하나하나 넘기는 용도
+        setMainMovieImage(res.data.results[0]);
+        setCurrentPage(res.data.page);
       });
   }
 }
